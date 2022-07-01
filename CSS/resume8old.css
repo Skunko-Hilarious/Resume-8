@@ -1,0 +1,160 @@
+html {
+    font-family:sans-serif;
+    padding:5px;
+}
+body{
+    display:flex;
+    flex-direction: column;
+}
+/*Font sizes and modification*/
+h1{
+    font-size:2em;
+}
+h2{
+    font-size:1.5em;
+}
+/*Sections of the page*/
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+header{
+    background-color: #4B4453;
+    background-image: url("../Images/5dots.png");
+    background-repeat: repeat;
+    color: white;
+}
+main{
+    display:flex;
+}
+aside{
+    background-color: #B0A8B9;
+    width: 30%;
+    padding:20px;
+}
+article{
+    padding:20px;
+    padding-left:30px;
+}
+footer{
+    background-color: #4B4453;
+    color: white;
+    text-align: center;
+}
+footer i{
+    color: black;
+}
+/*Classes*/
+.profile{
+    width: 300px;
+    border: solid 3px #c93015;
+    border-radius: 50%;
+}
+.noBullet{
+    list-style-type: none;
+    padding:0px; /*Message 1*/
+    width:60px;
+    height:60px;
+}
+.picture{
+    max-width:100%;
+}
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+#top ul li{
+    list-style: none;
+}
+#top ul li a{
+    text-decoration: none;
+
+}
+.main-content{
+    display: grid;
+    grid-template-columns: auto auto auto auto;/*Message 4*/
+    font-size:30px;
+}
+
+
+/*contact buttons*/
+.wrapper .contacts {
+    line-height: 60px;
+    display: inline-block;/*Message 3*/
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.wrapper .contacts:hover {
+    width: 200px;
+    background-color: white;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .contacts span {
+    font-size: 20px;
+    height: 60px;
+    /*line-height: 60px; *//*Message 2*/
+    margin-left: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease-out;
+}
+.wrapper .contacts .icon i {
+    font-size: 50px;
+    line-height: 80px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .contacts .icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .contacts:nth-child(1):hover i{
+    color:#1877f2;
+}
+.wrapper .contacts:nth-child(2):hover i{
+    color: #171515;
+}
+.wrapper .contacts:nth-child(3):hover i{
+    color: #c32aa3;
+}
+.wrapper .contacts:nth-child(1):hover span{
+    color:#1877f2;
+}
+.wrapper .contacts:nth-child(2):hover span{
+    color: #171515;
+}
+.wrapper .contacts:nth-child(3):hover span{
+    color: #c32aa3;
+}
+/* `sm` applies to x-small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+    .content{
+        display: inline-block;
+        
+    }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) { 
+    .content{
+        display: inline-block;
+        
+    }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) { 
+    .content{
+        display: inline-block;
+        
+    }
+}

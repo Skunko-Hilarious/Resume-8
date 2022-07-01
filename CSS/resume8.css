@@ -1,155 +1,181 @@
-html {
-    font-family:sans-serif;
-    padding:5px;
-}
-body{
-    display:flex;
-    flex-direction: column;
-}
-/*Font sizes and modification*/
-h1{
-    font-size:2em;
-}
-h2{
-    font-size:1.5em;
-}
-/*Sections of the page*/
-nav{
-    display: flex;
-    justify-content: space-around;
+/*Page-wide modifications*/
+html{
+    font-family: sans-serif;
+    background-color: black;
 }
 
+/*Navigation bar*/
+nav{
+    background-color: gray;
+    /*Sets the navigation section to be the full width of the screen*/
+    width:100%; 
+    /*Arranges the divs (navigation links) next to each other horizontally.*/
+    display:flex; 
+    justify-content: center;
+    /*Sets the line height so that the links are aligned vertically*/
+    height: 30px; 
+    line-height: 30px;
+}
+.navLink {
+    width: 15%; /*Individual container that will be arranged by <nav>, does not directly contain the link*/
+    text-align: center;
+}
+a{
+    text-decoration: wavy;
+}
+
+
+/*Header and profile picture*/
 header{
+    padding-top: 10px;
+    /*Flex can be justified, so I use it here, though its only purpose is for alignment*/
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    /*Background image and background color*/
     background-color: #4B4453;
     background-image: url("../Images/5dots.png");
     background-repeat: repeat;
     color: white;
 }
-main{
-    display:flex;
-}
-aside{
-    background-color: #B0A8B9;
-    width: 15%;
-    padding:20px;
-}
-article{
-    padding:20px;
-    padding-left:30px;
-}
-footer{
-    background-color: #4B4453;
-    color: white;
-    text-align: center;
-}
-footer i{
-    color: black;
-}
-/*Classes*/
 .profile{
+    /*Styles the profile image, setting its width and curving its edges into a circle*/
     width: 300px;
     border: solid 3px #c93015;
     border-radius: 50%;
 }
-.noBullet{
-    list-style-type: none;
-    padding:0px; /*Message 1*/
-    width:60px;
-    height:60px;
+
+/*Container for the main content, including the <aside> and <article>*/
+main{
+    background-color: white;
+    width:100%;
+    /*Arranges the article and the sidebar next to each other*/
+    display:flex;
+}
+/*Aside, bar on the left that contains an image in the picture element*/
+.sidebar{
+    max-width:15%;
+    background-color: #B0A8B9;
 }
 .picture{
-    max-width:100%;
-}
-.nav{
-    display: flex;
-    justify-content: space-evenly;
-}
-#top ul li{
-    list-style: none;
-}
-#top ul li a{
-    text-decoration: none;
-
+    width: 100%;
+    max-width: 600px;
 }
 
-
-
-/*contact buttons*/
-.main-content{
-    display: grid;
-    grid-template-columns: auto auto auto auto;/*Message 4*/
-    font-size:30px;
+/*A container for all the sections within the main article*/
+article{
+    /*Sets the width of the container to fit the space available, between the edge of the sidebar and edge of the body*/
+    width:100%;
 }
-.wrapper .contacts {
-    line-height: 60px;
-    display: inline-block;/*Message 3*/
+section{
+    /*Causes the sections to space themselves out equally horizontally*/
+    display:inline-block;
+    width: 25%;
+    min-width: 300px;
+    margin: 20px auto 5px auto; 
+    padding: 5px 10px 5px 10px;
+    background-color: gray;
+}
+
+
+/*Container for the footer*/
+footer{
+    text-align: center;
+    background-color: white;
+}
+/*The individual contact buttons*/
+.contact{
+    display:inline-block;
     width: 80px;
-    height: 80px;
-    margin: 0 10px;
+    height:80px;
     border-radius: 50px;
     overflow: hidden;
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
-
-.wrapper .contacts:hover {
-    width: 200px;
-    background-color: white;
-    transition: all 0.3s ease-out;
-}
-
-.wrapper .contacts span {
-    font-size: 20px;
+/*Modifying the text container that is next to the icon within the contact buttons*/
+.contact span {
+    font-size: 0px;
     height: 60px;
-    /*line-height: 60px; *//*Message 2*/
     margin-left: 10px;
     font-weight: 500;
     transition: all 0.3s ease-out;
 }
-.wrapper .contacts .icon i {
+/*Modifies the actual icon within the contact button, such as github icon or facebook icon*/
+.contact .icon i {
     font-size: 50px;
-    line-height: 80px;
     transition: all 0.3s ease-out;
 }
-.wrapper .contacts .icon {
-    display: inline-block;
+/*When the mouse hovers over a contact button, it gets modified*/
+.contact:hover {
+    width: 200px;
+    background-color: black;
+    color:white;
+    transition: all 0.3s ease-out;
+}
+/*Modifying the text container (span) in the contact buttons when the mouse is hovering over it*/
+.contact:hover span {
+    font-size: 20px;
     height: 60px;
-    width: 60px;
-    line-height: 60px;
+    margin-left: 10px;
+    font-weight: 500;
     transition: all 0.3s ease-out;
 }
-.wrapper .contacts:nth-child(1):hover i{
+/*Changes the color of the icons when the mouse hovers over them*/
+.contact:nth-child(1):hover i{
     color:#1877f2;
 }
-.wrapper .contacts:nth-child(2):hover i{
+.contact:nth-child(2):hover i{
     color: #171515;
 }
-.wrapper .contacts:nth-child(3):hover i{
+.contact:nth-child(3):hover i{
     color: #c32aa3;
 }
-.wrapper .contacts:nth-child(1):hover span{
-    color:#1877f2;
-}
-.wrapper .contacts:nth-child(2):hover span{
-    color: #171515;
-}
-.wrapper .contacts:nth-child(3):hover span{
-    color: #c32aa3;
-}
-/* `sm` applies to x-small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) { 
-    .main-contnet{
-        display: grid;
-        grid-template-columns: 1fr;
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    main{
+        display:contents;
     }
-}
-
-/* `md` applies to small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) { 
-
-}
-
-/* `lg` applies to medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) { 
-
-}
+    .sidebar{
+        max-width:100%;
+    }
+    section{
+        display:inline-block;
+        width: 45%;
+        min-width:auto;
+    }
+    #skills{
+        width:94%;
+    }
+} 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    main{
+        display:contents;
+    }
+    .sidebar{
+        max-width:100%;
+    }
+    section{
+        display:inline-block;
+        width: 45%;
+        min-width:auto;
+    }
+    #skills{
+        width:94%;
+    }
+} 
+@media only screen and (max-width: 600px) {
+    main{
+        display:contents;
+    }
+    .sidebar{
+        max-width:100%;
+    }
+    section{
+        display:content;
+        width: 100%;
+        min-width:auto;
+    }
+} 
